@@ -1,7 +1,5 @@
 export function add(numbers) {
-    if (numbers === "") return 0;
+    if (!numbers) return 0;
   
-    const parts = numbers.split(',').map(Number);
-    return parts.reduce((sum, n) => sum + n, 0);
-  }
-  
+    return numbers.split(/,|\n/).map(Number).reduce((sum, n) => sum + n, 0);
+  }  
