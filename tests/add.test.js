@@ -40,6 +40,9 @@ describe('add', () => {
   
   it('gère un séparateur personnalisé de plusieurs caractères', () => {
     expect(add("//[***]\n1***2***3")).toBe(6)
-  })  
-    
+  })
+
+  it('gère plusieurs séparateurs personnalisés', () => {
+    expect(add("//[*][%]\n1*2%3")).toBe(6)
+  })
 })
