@@ -9,7 +9,8 @@ export function add(numbers) {
       numbers = parts[1];
     }
   
-    const values = numbers.split(delimiter).map(Number);
+    const values = numbers.split(delimiter).map(Number).filter(n => n <= 1000);
+  
     const negatives = values.filter(n => n < 0);
   
     if (negatives.length > 0) {

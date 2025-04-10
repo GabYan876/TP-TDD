@@ -33,6 +33,9 @@ describe('add', () => {
   it('lève une erreur avec tous les nombres négatifs dans le message', () => {
     expect(() => add("1,-2,-3,4")).toThrow("Nombres négatifs non autorisés : -2, -3")
   })
-  
+
+  it('ignore les nombres strictement plus grands que 1000', () => {
+    expect(add("1\n2,1002")).toBe(3)
+  })  
     
 })
