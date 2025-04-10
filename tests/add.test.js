@@ -26,4 +26,8 @@ describe('add', () => {
     expect(add("//;\n1;2")).toBe(3)
   })
   
+  it('lève une erreur si un nombre négatif est présent', () => {
+    expect(() => add("1,-2,3")).toThrow("Nombres négatifs non autorisés : -2")
+  })
+    
 })

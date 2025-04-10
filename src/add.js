@@ -9,6 +9,13 @@ export function add(numbers) {
       numbers = parts[1];
     }
   
-    return numbers.split(delimiter).map(Number).reduce((sum, n) => sum + n, 0);
+    const values = numbers.split(delimiter).map(Number);
+    const negatives = values.filter(n => n < 0);
+  
+    if (negatives.length > 0) {
+      throw new Error("Nombres négatifs non autorisés : " + negatives.join(','));
+    }
+  
+    return values.reduce((sum, n) => sum + n, 0);
   }
   
