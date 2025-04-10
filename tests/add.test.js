@@ -13,4 +13,9 @@ describe('add', () => {
   it('retourne la somme de deux nombres', () => {
     expect(add("1,2")).toBe(3)
   })
+
+  it('retourne la somme de plusieurs nombres', () => {
+    expect(add("1,2,3,4,5")).toBe(15)
+  })
+  
 })
