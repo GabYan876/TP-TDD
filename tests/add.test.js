@@ -36,6 +36,10 @@ describe('add', () => {
 
   it('ignore les nombres strictement plus grands que 1000', () => {
     expect(add("1\n2,1002")).toBe(3)
+  })
+  
+  it('gère un séparateur personnalisé de plusieurs caractères', () => {
+    expect(add("//[***]\n1***2***3")).toBe(6)
   })  
     
 })
