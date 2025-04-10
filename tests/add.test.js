@@ -25,9 +25,14 @@ describe('add', () => {
   it('gère un séparateur personnalisé défini en début de chaîne', () => {
     expect(add("//;\n1;2")).toBe(3)
   })
-  
+
   it('lève une erreur si un nombre négatif est présent', () => {
     expect(() => add("1,-2,3")).toThrow("Nombres négatifs non autorisés : -2")
   })
+
+  it('lève une erreur avec tous les nombres négatifs dans le message', () => {
+    expect(() => add("1,-2,-3,4")).toThrow("Nombres négatifs non autorisés : -2, -3")
+  })
+  
     
 })

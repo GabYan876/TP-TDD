@@ -13,7 +13,7 @@ export function add(numbers) {
     const negatives = values.filter(n => n < 0);
   
     if (negatives.length > 0) {
-      throw new Error("Nombres négatifs non autorisés : " + negatives.join(','));
+      throw new Error("Nombres négatifs non autorisés : " + negatives.join(', '));
     }
   
     return values.reduce((sum, n) => sum + n, 0);
