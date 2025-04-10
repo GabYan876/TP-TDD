@@ -20,5 +20,10 @@ describe('add', () => {
 
   it('gère les retours à la ligne comme séparateurs', () => {
     expect(add("1\n2,3")).toBe(6)
-  })  
+  })
+
+  it('gère un séparateur personnalisé défini en début de chaîne', () => {
+    expect(add("//;\n1;2")).toBe(3)
+  })
+  
 })
